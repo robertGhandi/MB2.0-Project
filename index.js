@@ -1,4 +1,5 @@
-const authRoutes = require("./routes/auth.route");
+const authRoutes = require("./routes/auth.routes");
+const recipeRoutes = require("./routes/recipe.routes")
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
@@ -10,6 +11,7 @@ const PORT = 4000;
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/recipe", recipeRoutes)
 
 const startServer = async () => {
 	try {
